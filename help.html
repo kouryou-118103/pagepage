@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+    body {
+        font-family: 'Comic Sans MS', cursive;
+        margin: 0;
+    }
+    h1 {
+        font-size: 40px;
+        background-color: #f0d510;
+        color: #ffffff;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    .避けるh1 {
+        transition: 0.5s all;
+        display: block;
+        position: relative;
+        z-index: 10;
+    }
+    .避けるh1:hover {
+        transform: translateX(calc(20px - 50%));
+        rotate: 10deg;
+    }
+    .拡大2 {
+        transition: transform 0.5s ease-in-out;
+        display: inline-block;
+        position: relative;
+        z-index: 10;
+    }
+    .拡大2:hover {
+        transform: scale(2) rotate(20deg);
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+    .震える2:hover {
+        display: inline-block;
+        animation: hurueru 0.2s infinite alternate; 
+    }
+    @keyframes hurueru {
+        0% { transform: translate(0px, 0px) rotateZ(0deg) skew(0deg); }
+        25% { transform: translate(3px, 1px) rotateZ(3deg) skew(5deg); }
+        50% { transform: translate(-2px, 2px) rotateZ(0deg) skew(-2deg); }
+        75% { transform: translate(2px, -2px) rotateZ(-3deg) skew(0deg); }
+        100% { transform: translate(0px, 0px) rotateZ(0deg) skew(0deg); }
+}
+    </style>
+</head>
+<body>
+    <h1 class='避けるh1'>こちらはヘルプページです。</h1>
+    <p class='拡大2'>スタートページは</p><a class='震える2' href="file:///home/chronos/u-1e48d63257678a2b1be3bc90023575700f2253e3/MyFiles/Downloads/%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9A%E3%83%BC%E3%82%B8/startpage.html">こちら</a><br>
+</body>
+</html>
