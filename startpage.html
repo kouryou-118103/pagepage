@@ -7,7 +7,7 @@
     <style type="text/css">
     .warning-message {
         display: none; /* 初期状態は非表示 */
-        background-color: #f44336;
+        background-color: #f0d510;
         color: white;
         padding: 20px;
         position: fixed;
@@ -99,9 +99,9 @@
 </head>
 <body>
     <div id="user-agent-warning" class="warning-message">
-        あなたの環境ではこのページが正常に動かないかもしれません。<br>
+        <strong>あなたの環境ではこのページが正常に動かないかもしれません。</strong><br>
         Windows 10 または Chromium OS の Chrome 126 での動作を確認しています。<br>
-        <strong>あなたのユーザーエージェント: </strong><span id="user-agent-display"></span>
+        <strong>あなたのユーザーエージェントは↓です。 </strong><span id="user-agent-display"></span><br>
         <button class="close-btn" onclick="closeWarning()">×</button>
     </div>
    <script>
