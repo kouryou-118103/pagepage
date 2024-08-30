@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>スタートページ！ここから始めよう！</title>
     <style type="text/css">
+    .warning-message {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffcc00;
+        color: #000;
+        padding: 15px 30px;
+        border: 1px solid #000;
+        z-index: 1000;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-weight: bold;
+        font-size: 16px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
         h1 {
             font-size: 30px;
             background-color: #f0d510;
@@ -75,7 +99,36 @@
         }
     </style>
 </head>
+<script>
+    function checkUserAgent() {
+        var userAgent = navigator.userAgent;
+        
+        // ユーザーエージェント情報をメッセージボックスに表示
+        document.getElementById("user-agent-display").textContent = userAgent;
+
+        var isWindowsChrome = userAgent.includes("Windows NT 10.0") && userAgent.includes("Chrome/126");
+        var isChromiumOSChrome = userAgent.includes("CrOS") && userAgent.includes("Chrome/126");
+
+        if (!isWindowsChrome && !isChromiumOSChrome) {
+            document.getElementById("user-agent-warning").style.display = "block";
+        }
+    }
+
+    function closeWarning() {
+        document.getElementById("user-agent-warning").style.display = "none";
+    }
+
+    checkUserAgent();
+</script>
+
 <body>
+<div id="user-agent-warning" class="warning-message">
+    このページは現在のデバイスではサポートされていない可能性があります。<br>
+    Windows 10 または Chromium OS の Chrome 126 を使用してください。<br>
+    <strong>あなたのユーザーエージェント: </strong><span id="user-agent-display"></span>
+    <button class="close-btn" onclick="closeWarning()">×</button>
+</div>
+
         <marquee width="450" height="50" scrollamount="8" scrolldelay="80" direction="up" behavior="alternate" class='震える2'>このページでは普通の文字は存在しません。</marquee><br>
     <h1 class='避けるh1'>ここから始める</h1>
     <p class='拡大 震える2'>よく使うリンク</p><br>
